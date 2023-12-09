@@ -3,9 +3,9 @@ from Repository import EventRepository
 
 class EventService:
     def __init__(self):
-        self._event_repository = EventRepository()
-        self._event_commands = EventCommands(self._event_repository)
-        self._event_queries = EventQueries(self._event_repository)
+        self._event_repository = EventRepository.EventRepository()
+        self._event_commands = EventCommands.EventCommands(self._event_repository)
+        self._event_queries = EventQueries.EventQueries(self._event_repository)
 
     def add_event(self, id, date, hour, description):
         self._event_commands.add_event(id, date, hour, description)

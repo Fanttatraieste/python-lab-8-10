@@ -1,3 +1,5 @@
+from UI.Events_Menu import Events_Menu
+
 def ui_menu():
     print("")
     print("-------- UI Menu --------")
@@ -11,13 +13,14 @@ def ui_menu():
     return choice
 
 
-def run_ui_menu():
+def run_ui_menu(events_service):
     show_ui_menu = True
 
     while show_ui_menu:
         x = ui_menu()
 
+        if x == 1:
+            Events_Menu.run_events_menu(events_service)
+
         if x == 4:
             show_ui_menu = False
-
-
